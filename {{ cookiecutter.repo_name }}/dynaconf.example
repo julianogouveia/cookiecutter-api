@@ -5,6 +5,6 @@ PROJECT_SLUG="${PROJECT_SLUG^^}"
 
 #   Database creation step-by-step:
 # 1 - $ createuser -P {{ cookiecutter.project_name }}
-# 2 - $ creatdb {{ cookiecutter.project_name }} -O {{ cookiecutter.project_name }}
+# 2 - $ createdb {{ cookiecutter.project_name }} -O {{ cookiecutter.project_name }}
 export "${PROJECT_SLUG}_DATABASE_URL"="postgres://{{ cookiecutter.project_name }}:{{ cookiecutter.project_name }}@localhost:5432/{{ cookiecutter.project_name }}"
 export "${PROJECT_SLUG}_SECRET_KEY"="$(openssl rand -base64 64)"
