@@ -2,6 +2,9 @@ import os
 
 from dynaconf import settings as dynaconf_settings
 
+# Dynaconf configure
+dynaconf_settings.configure()
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -9,12 +12,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = dynaconf_settings.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = dynaconf_settings.DEBUG
 
 ALLOWED_HOSTS = []
 
 # Dynaconf https://github.com/rochacbruno/dynaconf
-DYNACONF_NAMESPACE = '{{ cookiecutter.project_name }}'.upper()
+DYNACONF_NAMESPACE = '{{ cookiecutter.project_name.upper() }}'
 
 # Application definition
 
@@ -64,8 +67,6 @@ WSGI_APPLICATION = '{{ cookiecutter.project_name }}.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-dynaconf_settings.configure()
-
 DATABASES = {
     'default': dynaconf_settings.DATABASE_URL
 }
@@ -108,3 +109,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend', 'static')
+]
