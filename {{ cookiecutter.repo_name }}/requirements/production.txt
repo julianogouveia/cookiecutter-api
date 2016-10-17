@@ -5,6 +5,7 @@ click==6.6
 cookiecutter==1.4.0
 dj-database-url==0.4.1
 Django==1.10.2
+django-extensions==1.7.4
 django-model-utils==2.6
 djangorestframework==3.4.7
 future==0.15.2
