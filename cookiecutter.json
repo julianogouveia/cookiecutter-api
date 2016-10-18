@@ -2,7 +2,4 @@
 	"repo_name": "example",
 	"project_name": "example",
 	"app_name": "example"
-	"opbeat_organization_id": "",
-	"opbeat_app_id": "",
-	"opbeat_secret_token": "",
 }

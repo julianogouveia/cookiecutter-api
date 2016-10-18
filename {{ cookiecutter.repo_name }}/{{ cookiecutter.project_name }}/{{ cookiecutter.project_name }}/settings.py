@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'opbeat.contrib.django'
+    'opbeat.contrib.django',
 
     # Custom apps
     'apps.bank',
