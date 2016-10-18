@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'opbeat.contrib.django'
 
     # Custom apps
     'apps.bank',
@@ -38,9 +39,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
 ]
 
-ROOT_URLCONF = 'bank_api.urls'
+ROOT_URLCONF = '{{ cookiecutter.project_name }}.urls'
 
 TEMPLATES = [
     {
@@ -60,6 +62,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bank_api.wsgi.application'
 
+
+# Opbeat
+# https://opbeat.com/
+
+OPBEAT = {
+    'ORGANIZATION_ID': config('OPBEAT_ORGANIZATION_ID'),
+    'APP_ID': config('OPBEAT_APP_ID'),
+    'SECRET_TOKEN': config('OPBEAT_SECRET_TOKEN'),
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
