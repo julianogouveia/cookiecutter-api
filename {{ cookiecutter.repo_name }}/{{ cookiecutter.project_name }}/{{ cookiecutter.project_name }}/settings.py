@@ -24,11 +24,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'django_extensions',
     'opbeat.contrib.django',
 
     # Custom apps
-    'apps.bank',
+    'apps.{{ cookiecutter.app_name }}',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bank_api.wsgi.application'
+WSGI_APPLICATION = '{{ cookiecutter.projet_name }}.wsgi.application'
 
 
 # Opbeat
