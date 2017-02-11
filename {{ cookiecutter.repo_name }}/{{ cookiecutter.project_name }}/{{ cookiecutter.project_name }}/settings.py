@@ -61,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = '{{ cookiecutter.projet_name }}.wsgi.application'
+WSGI_APPLICATION = '{{ cookiecutter.project_name }}.wsgi.application'
 
 
 # Opbeat
